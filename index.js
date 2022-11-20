@@ -1,11 +1,15 @@
 var buttonColor = ["red", "blue", "green", "yellow"];
 
+// it store the game pattern
 var gamePattern = [];
+
+// it stores the user clicks pattern
 var userClickedPattern = [];
 
 var level = 0;
 var started = false;
 
+// it is for start the game by pressing key
 $(document).keypress(function () {
     if (!started) {
         $("#level-title").text("Level " + level);
@@ -22,7 +26,7 @@ $(".btn").click(function () {
     checkAnswer(userClickedPattern.length - 1);
 });
 
-
+// it checks the sequence
 function checkAnswer(currentLevel) {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
         if (userClickedPattern.length === gamePattern.length) {
